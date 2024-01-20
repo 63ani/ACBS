@@ -332,13 +332,7 @@ void Move(char startx, char starty, char endx, char endy) {
 }
 
 void Move_motors() {
-  if (Move_Type == 'C') {
-    // Long castle
-  } else if (Move_Type == 'c') {
-    // Short castle
-  } else if (Move_Type == 'e') {
-    // En passant
-  } else if (Move_Type == 'x') {
+  if (Move_Type == 'x') {
     // Capture move
     Move('1', endy, endx, endy);
     Move(endx, '1', endx, endy);

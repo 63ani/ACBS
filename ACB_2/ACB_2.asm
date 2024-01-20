@@ -66,7 +66,7 @@ L_interrupt6:
 L_interrupt4:
 ;ACB_2.c,67 :: 		}
 L_end_interrupt:
-L__interrupt123:
+L__interrupt117:
 	MOVF       ___savePCLATH+0, 0
 	MOVWF      PCLATH+0
 	SWAPF      ___saveSTATUS+0, 0
@@ -409,10 +409,10 @@ L_msDelay25:
 	MOVF       FARG_msDelay_ms+1, 0
 	SUBWF      _tick+1, 0
 	BTFSS      STATUS+0, 2
-	GOTO       L__msDelay126
+	GOTO       L__msDelay120
 	MOVF       FARG_msDelay_ms+0, 0
 	SUBWF      _tick+0, 0
-L__msDelay126:
+L__msDelay120:
 	BTFSC      STATUS+0, 0
 	GOTO       L_msDelay26
 ;ACB_2.c,171 :: 		;
@@ -467,10 +467,10 @@ L_Move_X32:
 	MOVF       FARG_Move_X_steps+1, 0
 	SUBWF      Move_X_j_L0+1, 0
 	BTFSS      STATUS+0, 2
-	GOTO       L__Move_X129
+	GOTO       L__Move_X123
 	MOVF       FARG_Move_X_steps+0, 0
 	SUBWF      Move_X_j_L0+0, 0
-L__Move_X129:
+L__Move_X123:
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move_X33
 ;ACB_2.c,190 :: 		PORTC = PORTC & 0xFE; // Step_X (RC0) = 0
@@ -522,10 +522,10 @@ L_Move_Y37:
 	MOVF       FARG_Move_Y_steps+1, 0
 	SUBWF      Move_Y_j_L0+1, 0
 	BTFSS      STATUS+0, 2
-	GOTO       L__Move_Y131
+	GOTO       L__Move_Y125
 	MOVF       FARG_Move_Y_steps+0, 0
 	SUBWF      Move_Y_j_L0+0, 0
-L__Move_Y131:
+L__Move_Y125:
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move_Y38
 ;ACB_2.c,209 :: 		PORTC = PORTC & 0xFB; // Step_Y (RC2) = 0
@@ -606,10 +606,10 @@ L_Move_D47:
 	MOVF       FARG_Move_D_steps+1, 0
 	SUBWF      Move_D_j_L0+1, 0
 	BTFSS      STATUS+0, 2
-	GOTO       L__Move_D133
+	GOTO       L__Move_D127
 	MOVF       FARG_Move_D_steps+0, 0
 	SUBWF      Move_D_j_L0+0, 0
-L__Move_D133:
+L__Move_D127:
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move_D48
 ;ACB_2.c,232 :: 		PORTC = PORTC & 0xFA; // Step_X (RC0) = 0, Step_Y (RC2) = 0
@@ -647,7 +647,7 @@ L_Move_Home50:
 	GOTO       L_Move_Home54
 	BTFSC      PORTB+0, 5
 	GOTO       L_Move_Home54
-L__Move_Home117:
+L__Move_Home111:
 ;ACB_2.c,246 :: 		Move_D(0, 300);
 	CLRF       FARG_Move_D_dir+0
 	MOVLW      44
@@ -686,7 +686,7 @@ L_Move_Home58:
 	GOTO       L_Move_Home62
 	BTFSS      PORTB+0, 5
 	GOTO       L_Move_Home62
-L__Move_Home116:
+L__Move_Home110:
 ;ACB_2.c,252 :: 		break;
 	GOTO       L_Move_Home51
 L_Move_Home62:
@@ -767,10 +767,10 @@ _Move:
 	MOVF       R3+1, 0
 	XORWF      R1+1, 0
 	BTFSS      STATUS+0, 2
-	GOTO       L__Move138
+	GOTO       L__Move132
 	MOVF       R1+0, 0
 	XORWF      R3+0, 0
-L__Move138:
+L__Move132:
 	BTFSS      STATUS+0, 2
 	GOTO       L_Move65
 ;ACB_2.c,272 :: 		step_count = abs(endy - starty);
@@ -794,7 +794,7 @@ L__Move138:
 	SUBWF      FARG_Move_starty+0, 0
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move68
-L__Move121:
+L__Move115:
 ;ACB_2.c,275 :: 		k = step_count;
 	MOVF       _step_count+0, 0
 	MOVWF      _k+0
@@ -805,10 +805,10 @@ L_Move69:
 	MOVF       _k+1, 0
 	SUBLW      0
 	BTFSS      STATUS+0, 2
-	GOTO       L__Move139
+	GOTO       L__Move133
 	MOVF       _k+0, 0
 	SUBLW      0
-L__Move139:
+L__Move133:
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move70
 ;ACB_2.c,277 :: 		Move_D(3, Square_Size);
@@ -838,7 +838,7 @@ L_Move68:
 	SUBWF      FARG_Move_endy+0, 0
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move74
-L__Move120:
+L__Move114:
 ;ACB_2.c,282 :: 		k = step_count;
 	MOVF       _step_count+0, 0
 	MOVWF      _k+0
@@ -849,10 +849,10 @@ L_Move75:
 	MOVF       _k+1, 0
 	SUBLW      0
 	BTFSS      STATUS+0, 2
-	GOTO       L__Move140
+	GOTO       L__Move134
 	MOVF       _k+0, 0
 	SUBLW      0
-L__Move140:
+L__Move134:
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move76
 ;ACB_2.c,284 :: 		Move_D(1, Square_Size);
@@ -882,7 +882,7 @@ L_Move74:
 	SUBWF      FARG_Move_endy+0, 0
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move80
-L__Move119:
+L__Move113:
 ;ACB_2.c,289 :: 		k = step_count;
 	MOVF       _step_count+0, 0
 	MOVWF      _k+0
@@ -893,10 +893,10 @@ L_Move81:
 	MOVF       _k+1, 0
 	SUBLW      0
 	BTFSS      STATUS+0, 2
-	GOTO       L__Move141
+	GOTO       L__Move135
 	MOVF       _k+0, 0
 	SUBLW      0
-L__Move141:
+L__Move135:
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move82
 ;ACB_2.c,291 :: 		Move_D(0, Square_Size);
@@ -925,7 +925,7 @@ L_Move80:
 	SUBWF      FARG_Move_starty+0, 0
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move86
-L__Move118:
+L__Move112:
 ;ACB_2.c,296 :: 		k = step_count;
 	MOVF       _step_count+0, 0
 	MOVWF      _k+0
@@ -936,10 +936,10 @@ L_Move87:
 	MOVF       _k+1, 0
 	SUBLW      0
 	BTFSS      STATUS+0, 2
-	GOTO       L__Move142
+	GOTO       L__Move136
 	MOVF       _k+0, 0
 	SUBLW      0
-L__Move142:
+L__Move136:
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move88
 ;ACB_2.c,298 :: 		Move_D(2, Square_Size);
@@ -993,10 +993,10 @@ L_Move91:
 	MOVF       _k+1, 0
 	SUBLW      0
 	BTFSS      STATUS+0, 2
-	GOTO       L__Move143
+	GOTO       L__Move137
 	MOVF       _k+0, 0
 	SUBLW      0
-L__Move143:
+L__Move137:
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move92
 ;ACB_2.c,307 :: 		Move_Y(1, Square_Size);
@@ -1028,10 +1028,10 @@ L_Move94:
 	MOVF       _k+1, 0
 	SUBLW      0
 	BTFSS      STATUS+0, 2
-	GOTO       L__Move144
+	GOTO       L__Move138
 	MOVF       _k+0, 0
 	SUBLW      0
-L__Move144:
+L__Move138:
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move95
 ;ACB_2.c,313 :: 		Move_Y(0, Square_Size);
@@ -1078,10 +1078,10 @@ L_Move97:
 	MOVF       _k+1, 0
 	SUBLW      0
 	BTFSS      STATUS+0, 2
-	GOTO       L__Move145
+	GOTO       L__Move139
 	MOVF       _k+0, 0
 	SUBLW      0
-L__Move145:
+L__Move139:
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move98
 ;ACB_2.c,321 :: 		Move_X(1, Square_Size);
@@ -1113,10 +1113,10 @@ L_Move100:
 	MOVF       _k+1, 0
 	SUBLW      0
 	BTFSS      STATUS+0, 2
-	GOTO       L__Move146
+	GOTO       L__Move140
 	MOVF       _k+0, 0
 	SUBLW      0
-L__Move146:
+L__Move140:
 	BTFSC      STATUS+0, 0
 	GOTO       L_Move101
 ;ACB_2.c,327 :: 		Move_X(0, Square_Size);
@@ -1146,33 +1146,12 @@ L_end_Move:
 _Move_motors:
 
 ;ACB_2.c,334 :: 		void Move_motors() {
-;ACB_2.c,335 :: 		if (Move_Type == 'C') {
-	MOVF       _Move_Type+0, 0
-	XORLW      67
-	BTFSS      STATUS+0, 2
-	GOTO       L_Move_motors102
-;ACB_2.c,337 :: 		} else if (Move_Type == 'c') {
-	GOTO       L_Move_motors103
-L_Move_motors102:
-	MOVF       _Move_Type+0, 0
-	XORLW      99
-	BTFSS      STATUS+0, 2
-	GOTO       L_Move_motors104
-;ACB_2.c,339 :: 		} else if (Move_Type == 'e') {
-	GOTO       L_Move_motors105
-L_Move_motors104:
-	MOVF       _Move_Type+0, 0
-	XORLW      101
-	BTFSS      STATUS+0, 2
-	GOTO       L_Move_motors106
-;ACB_2.c,341 :: 		} else if (Move_Type == 'x') {
-	GOTO       L_Move_motors107
-L_Move_motors106:
+;ACB_2.c,335 :: 		if (Move_Type == 'x') {
 	MOVF       _Move_Type+0, 0
 	XORLW      120
 	BTFSS      STATUS+0, 2
-	GOTO       L_Move_motors108
-;ACB_2.c,343 :: 		Move('1', endy, endx, endy);
+	GOTO       L_Move_motors102
+;ACB_2.c,337 :: 		Move('1', endy, endx, endy);
 	MOVLW      49
 	MOVWF      FARG_Move_startx+0
 	MOVF       _endy+0, 0
@@ -1182,7 +1161,7 @@ L_Move_motors106:
 	MOVF       _endy+0, 0
 	MOVWF      FARG_Move_endy+0
 	CALL       _Move+0
-;ACB_2.c,344 :: 		Move(endx, '1', endx, endy);
+;ACB_2.c,338 :: 		Move(endx, '1', endx, endy);
 	MOVF       _endx+0, 0
 	MOVWF      FARG_Move_startx+0
 	MOVLW      49
@@ -1192,22 +1171,22 @@ L_Move_motors106:
 	MOVF       _endy+0, 0
 	MOVWF      FARG_Move_endy+0
 	CALL       _Move+0
-;ACB_2.c,345 :: 		PORTE = PORTE | 0x04; // Magnet On
+;ACB_2.c,339 :: 		PORTE = PORTE | 0x04; // Magnet On
 	BSF        PORTE+0, 2
-;ACB_2.c,346 :: 		msDelay(500);
+;ACB_2.c,340 :: 		msDelay(500);
 	MOVLW      244
 	MOVWF      FARG_msDelay_ms+0
 	MOVLW      1
 	MOVWF      FARG_msDelay_ms+1
 	CALL       _msDelay+0
-;ACB_2.c,347 :: 		Move_D(3, 128);              // Top right of square
+;ACB_2.c,341 :: 		Move_D(3, 128);              // Top right of square
 	MOVLW      3
 	MOVWF      FARG_Move_D_dir+0
 	MOVLW      128
 	MOVWF      FARG_Move_D_steps+0
 	CLRF       FARG_Move_D_steps+1
 	CALL       _Move_D+0
-;ACB_2.c,348 :: 		Move(endx, endy, '8', endy); // Edge of box
+;ACB_2.c,342 :: 		Move(endx, endy, '8', endy); // Edge of box
 	MOVF       _endx+0, 0
 	MOVWF      FARG_Move_startx+0
 	MOVF       _endy+0, 0
@@ -1217,7 +1196,7 @@ L_Move_motors106:
 	MOVF       _endy+0, 0
 	MOVWF      FARG_Move_endy+0
 	CALL       _Move+0
-;ACB_2.c,349 :: 		Move_X(1, home_X);           // Out of box
+;ACB_2.c,343 :: 		Move_X(1, home_X);           // Out of box
 	MOVLW      1
 	MOVWF      FARG_Move_X_dir+0
 	MOVLW      140
@@ -1225,53 +1204,53 @@ L_Move_motors106:
 	MOVLW      0
 	MOVWF      FARG_Move_X_steps+1
 	CALL       _Move_X+0
-;ACB_2.c,350 :: 		PORTE = PORTE & 0xFB;        // Magnet Off
+;ACB_2.c,344 :: 		PORTE = PORTE & 0xFB;        // Magnet Off
 	MOVLW      251
 	ANDWF      PORTE+0, 1
+;ACB_2.c,345 :: 		msDelay(500);
+	MOVLW      244
+	MOVWF      FARG_msDelay_ms+0
+	MOVLW      1
+	MOVWF      FARG_msDelay_ms+1
+	CALL       _msDelay+0
+;ACB_2.c,346 :: 		Move_Home(); // return home
+	CALL       _Move_Home+0
+;ACB_2.c,347 :: 		Move('1', starty, startx, starty);
+	MOVLW      49
+	MOVWF      FARG_Move_startx+0
+	MOVF       _starty+0, 0
+	MOVWF      FARG_Move_starty+0
+	MOVF       _startx+0, 0
+	MOVWF      FARG_Move_endx+0
+	MOVF       _starty+0, 0
+	MOVWF      FARG_Move_endy+0
+	CALL       _Move+0
+;ACB_2.c,348 :: 		Move(startx, '1', startx, starty); // Go to pickup
+	MOVF       _startx+0, 0
+	MOVWF      FARG_Move_startx+0
+	MOVLW      49
+	MOVWF      FARG_Move_starty+0
+	MOVF       _startx+0, 0
+	MOVWF      FARG_Move_endx+0
+	MOVF       _starty+0, 0
+	MOVWF      FARG_Move_endy+0
+	CALL       _Move+0
+;ACB_2.c,350 :: 		PORTE = PORTE | 0x04; // Magnet On
+	BSF        PORTE+0, 2
 ;ACB_2.c,351 :: 		msDelay(500);
 	MOVLW      244
 	MOVWF      FARG_msDelay_ms+0
 	MOVLW      1
 	MOVWF      FARG_msDelay_ms+1
 	CALL       _msDelay+0
-;ACB_2.c,352 :: 		Move_Home(); // return home
-	CALL       _Move_Home+0
-;ACB_2.c,353 :: 		Move('1', starty, startx, starty);
-	MOVLW      49
-	MOVWF      FARG_Move_startx+0
-	MOVF       _starty+0, 0
-	MOVWF      FARG_Move_starty+0
-	MOVF       _startx+0, 0
-	MOVWF      FARG_Move_endx+0
-	MOVF       _starty+0, 0
-	MOVWF      FARG_Move_endy+0
-	CALL       _Move+0
-;ACB_2.c,354 :: 		Move(startx, '1', startx, starty); // Go to pickup
-	MOVF       _startx+0, 0
-	MOVWF      FARG_Move_startx+0
-	MOVLW      49
-	MOVWF      FARG_Move_starty+0
-	MOVF       _startx+0, 0
-	MOVWF      FARG_Move_endx+0
-	MOVF       _starty+0, 0
-	MOVWF      FARG_Move_endy+0
-	CALL       _Move+0
-;ACB_2.c,356 :: 		PORTE = PORTE | 0x04; // Magnet On
-	BSF        PORTE+0, 2
-;ACB_2.c,357 :: 		msDelay(500);
-	MOVLW      244
-	MOVWF      FARG_msDelay_ms+0
-	MOVLW      1
-	MOVWF      FARG_msDelay_ms+1
-	CALL       _msDelay+0
-;ACB_2.c,358 :: 		Move_D(3, 128); // Top right of square
+;ACB_2.c,352 :: 		Move_D(3, 128); // Top right of square
 	MOVLW      3
 	MOVWF      FARG_Move_D_dir+0
 	MOVLW      128
 	MOVWF      FARG_Move_D_steps+0
 	CLRF       FARG_Move_D_steps+1
 	CALL       _Move_D+0
-;ACB_2.c,359 :: 		Move(startx, starty, endx, endy);
+;ACB_2.c,353 :: 		Move(startx, starty, endx, endy);
 	MOVF       _startx+0, 0
 	MOVWF      FARG_Move_startx+0
 	MOVF       _starty+0, 0
@@ -1281,39 +1260,39 @@ L_Move_motors106:
 	MOVF       _endy+0, 0
 	MOVWF      FARG_Move_endy+0
 	CALL       _Move+0
-;ACB_2.c,360 :: 		Move_D(0, 128);       // bottom left of square
+;ACB_2.c,354 :: 		Move_D(0, 128);       // bottom left of square
 	CLRF       FARG_Move_D_dir+0
 	MOVLW      128
 	MOVWF      FARG_Move_D_steps+0
 	CLRF       FARG_Move_D_steps+1
 	CALL       _Move_D+0
-;ACB_2.c,361 :: 		PORTE = PORTE & 0xFB; // Magnet Off
+;ACB_2.c,355 :: 		PORTE = PORTE & 0xFB; // Magnet Off
 	MOVLW      251
 	ANDWF      PORTE+0, 1
-;ACB_2.c,362 :: 		msDelay(500);
+;ACB_2.c,356 :: 		msDelay(500);
 	MOVLW      244
 	MOVWF      FARG_msDelay_ms+0
 	MOVLW      1
 	MOVWF      FARG_msDelay_ms+1
 	CALL       _msDelay+0
-;ACB_2.c,364 :: 		} else if (myRxBuffer[3] = 't') {
-	GOTO       L_Move_motors109
-L_Move_motors108:
+;ACB_2.c,358 :: 		} else if (myRxBuffer[3] = 't') {
+	GOTO       L_Move_motors103
+L_Move_motors102:
 	MOVLW      116
 	MOVWF      _myRxBuffer+3
-;ACB_2.c,366 :: 		startx = myRxBuffer[1];
+;ACB_2.c,360 :: 		startx = myRxBuffer[1];
 	MOVF       _myRxBuffer+1, 0
 	MOVWF      _startx+0
-;ACB_2.c,367 :: 		starty = myRxBuffer[2];
+;ACB_2.c,361 :: 		starty = myRxBuffer[2];
 	MOVF       _myRxBuffer+2, 0
 	MOVWF      _starty+0
-;ACB_2.c,368 :: 		endx = myRxBuffer[4];
+;ACB_2.c,362 :: 		endx = myRxBuffer[4];
 	MOVF       _myRxBuffer+4, 0
 	MOVWF      _endx+0
-;ACB_2.c,369 :: 		endy = myRxbuffer[5];
+;ACB_2.c,363 :: 		endy = myRxbuffer[5];
 	MOVF       _myRxBuffer+5, 0
 	MOVWF      _endy+0
-;ACB_2.c,370 :: 		Move('1', starty, startx, starty);
+;ACB_2.c,364 :: 		Move('1', starty, startx, starty);
 	MOVLW      49
 	MOVWF      FARG_Move_startx+0
 	MOVF       _myRxBuffer+2, 0
@@ -1323,7 +1302,7 @@ L_Move_motors108:
 	MOVF       _myRxBuffer+2, 0
 	MOVWF      FARG_Move_endy+0
 	CALL       _Move+0
-;ACB_2.c,371 :: 		Move(startx, '1', startx, starty);
+;ACB_2.c,365 :: 		Move(startx, '1', startx, starty);
 	MOVF       _startx+0, 0
 	MOVWF      FARG_Move_startx+0
 	MOVLW      49
@@ -1333,28 +1312,28 @@ L_Move_motors108:
 	MOVF       _starty+0, 0
 	MOVWF      FARG_Move_endy+0
 	CALL       _Move+0
-;ACB_2.c,372 :: 		msDelay(500);
+;ACB_2.c,366 :: 		msDelay(500);
 	MOVLW      244
 	MOVWF      FARG_msDelay_ms+0
 	MOVLW      1
 	MOVWF      FARG_msDelay_ms+1
 	CALL       _msDelay+0
-;ACB_2.c,373 :: 		PORTE = PORTE | 0x04; // Magnet On
+;ACB_2.c,367 :: 		PORTE = PORTE | 0x04; // Magnet On
 	BSF        PORTE+0, 2
-;ACB_2.c,374 :: 		Move_D(3, 128);       // Top right of square
+;ACB_2.c,368 :: 		Move_D(3, 128);       // Top right of square
 	MOVLW      3
 	MOVWF      FARG_Move_D_dir+0
 	MOVLW      128
 	MOVWF      FARG_Move_D_steps+0
 	CLRF       FARG_Move_D_steps+1
 	CALL       _Move_D+0
-;ACB_2.c,375 :: 		msDelay(500);
+;ACB_2.c,369 :: 		msDelay(500);
 	MOVLW      244
 	MOVWF      FARG_msDelay_ms+0
 	MOVLW      1
 	MOVWF      FARG_msDelay_ms+1
 	CALL       _msDelay+0
-;ACB_2.c,376 :: 		Move(startx, starty, endx, endy);
+;ACB_2.c,370 :: 		Move(startx, starty, endx, endy);
 	MOVF       _startx+0, 0
 	MOVWF      FARG_Move_startx+0
 	MOVF       _starty+0, 0
@@ -1364,89 +1343,86 @@ L_Move_motors108:
 	MOVF       _endy+0, 0
 	MOVWF      FARG_Move_endy+0
 	CALL       _Move+0
-;ACB_2.c,377 :: 		msDelay(500);
+;ACB_2.c,371 :: 		msDelay(500);
 	MOVLW      244
 	MOVWF      FARG_msDelay_ms+0
 	MOVLW      1
 	MOVWF      FARG_msDelay_ms+1
 	CALL       _msDelay+0
-;ACB_2.c,378 :: 		Move_D(0, 128);       // bottom left of square
+;ACB_2.c,372 :: 		Move_D(0, 128);       // bottom left of square
 	CLRF       FARG_Move_D_dir+0
 	MOVLW      128
 	MOVWF      FARG_Move_D_steps+0
 	CLRF       FARG_Move_D_steps+1
 	CALL       _Move_D+0
-;ACB_2.c,379 :: 		PORTE = PORTE & 0xFB; // Magnet Off
+;ACB_2.c,373 :: 		PORTE = PORTE & 0xFB; // Magnet Off
 	MOVLW      251
 	ANDWF      PORTE+0, 1
-;ACB_2.c,380 :: 		msDelay(500);
+;ACB_2.c,374 :: 		msDelay(500);
 	MOVLW      244
 	MOVWF      FARG_msDelay_ms+0
 	MOVLW      1
 	MOVWF      FARG_msDelay_ms+1
 	CALL       _msDelay+0
-;ACB_2.c,381 :: 		}
-L_Move_motors109:
-L_Move_motors107:
-L_Move_motors105:
+;ACB_2.c,375 :: 		}
 L_Move_motors103:
-;ACB_2.c,383 :: 		Move_Home();
+;ACB_2.c,377 :: 		Move_Home();
 	CALL       _Move_Home+0
-;ACB_2.c,384 :: 		}
+;ACB_2.c,378 :: 		}
 L_end_Move_motors:
 	RETURN
 ; end of _Move_motors
 
 _ATD_init:
 
-;ACB_2.c,386 :: 		void ATD_init(void){
-;ACB_2.c,387 :: 		ADCON0 = 0x41;// ATD ON, Don't GO, Channel 0, Fosc/16
+;ACB_2.c,380 :: 		void ATD_init(void){
+;ACB_2.c,381 :: 		ADCON0 = 0x41;// ATD ON, Don't GO, Channel 0, Fosc/16
 	MOVLW      65
 	MOVWF      ADCON0+0
-;ACB_2.c,388 :: 		ADCON1 = 0x4E;// A0  Analog, 500 KHz, left justified
+;ACB_2.c,382 :: 		ADCON1 = 0x4E;// A0  Analog, 500 KHz, left justified
 	MOVLW      78
 	MOVWF      ADCON1+0
-;ACB_2.c,389 :: 		TRISA = 0x01;
+;ACB_2.c,383 :: 		TRISA = 0x01;
 	MOVLW      1
 	MOVWF      TRISA+0
-;ACB_2.c,391 :: 		}
+;ACB_2.c,385 :: 		}
 L_end_ATD_init:
 	RETURN
 ; end of _ATD_init
 
 _ATD_read:
 
-;ACB_2.c,392 :: 		unsigned char ATD_read(void){
-;ACB_2.c,393 :: 		ADCON0 = ADCON0 | 0x04;// GO
+;ACB_2.c,386 :: 		unsigned char ATD_read(void){
+;ACB_2.c,387 :: 		ADCON0 = ADCON0 | 0x04;// GO
 	BSF        ADCON0+0, 2
-;ACB_2.c,394 :: 		while(ADCON0 & 0x04);
-L_ATD_read111:
+;ACB_2.c,388 :: 		while(ADCON0 & 0x04);
+L_ATD_read105:
 	BTFSS      ADCON0+0, 2
-	GOTO       L_ATD_read112
-	GOTO       L_ATD_read111
-L_ATD_read112:
-;ACB_2.c,395 :: 		return ADRESH;
+	GOTO       L_ATD_read106
+	GOTO       L_ATD_read105
+L_ATD_read106:
+;ACB_2.c,389 :: 		return ADRESH;
 	MOVF       ADRESH+0, 0
 	MOVWF      R0+0
-;ACB_2.c,396 :: 		}
+;ACB_2.c,390 :: 		}
 L_end_ATD_read:
 	RETURN
 ; end of _ATD_read
 
 _read_level:
 
-;ACB_2.c,398 :: 		unsigned char read_level(){
-;ACB_2.c,400 :: 		do{
-L_read_level113:
-;ACB_2.c,401 :: 		Lcd_Cmd(_LCD_CLEAR);
+;ACB_2.c,392 :: 		unsigned char read_level(){
+;ACB_2.c,394 :: 		do{
+L_read_level107:
+;ACB_2.c,395 :: 		Lcd_Cmd(_LCD_CLEAR);
 	MOVLW      1
 	MOVWF      FARG_Lcd_Cmd_out_char+0
 	CALL       _Lcd_Cmd+0
-;ACB_2.c,402 :: 		lvl = ATD_read();
+;ACB_2.c,396 :: 		lvl = ATD_read();
 	CALL       _ATD_read+0
 	MOVF       R0+0, 0
 	MOVWF      read_level_lvl_L0+0
-;ACB_2.c,403 :: 		lvl = (lvl*4)/255;
+;ACB_2.c,397 :: 		lvl = (lvl*4)/255;
 	MOVF       R0+0, 0
 	MOVWF      R2+0
 	CLRF       R2+1
@@ -1466,7 +1442,7 @@ L_read_level113:
 	CALL       _Div_16x16_S+0
 	MOVF       R0+0, 0
 	MOVWF      read_level_lvl_L0+0
-;ACB_2.c,404 :: 		LCD_Out(1,1, "Level: ");
+;ACB_2.c,398 :: 		LCD_Out(1,1, "Level: ");
 	MOVLW      1
 	MOVWF      FARG_Lcd_Out_row+0
 	MOVLW      1
@@ -1474,11 +1450,11 @@ L_read_level113:
 	MOVLW      ?lstr11_ACB_2+0
 	MOVWF      FARG_Lcd_Out_text+0
 	CALL       _Lcd_Out+0
-;ACB_2.c,405 :: 		txtlvl[0] = lvl+'1';
+;ACB_2.c,399 :: 		txtlvl[0] = lvl+'1';
 	MOVLW      49
 	ADDWF      read_level_lvl_L0+0, 0
 	MOVWF      _txtlvl+0
-;ACB_2.c,406 :: 		LCD_Out(1,8,txtlvl);
+;ACB_2.c,400 :: 		LCD_Out(1,8,txtlvl);
 	MOVLW      1
 	MOVWF      FARG_Lcd_Out_row+0
 	MOVLW      8
@@ -1486,7 +1462,7 @@ L_read_level113:
 	MOVLW      _txtlvl+0
 	MOVWF      FARG_Lcd_Out_text+0
 	CALL       _Lcd_Out+0
-;ACB_2.c,407 :: 		Lcd_Out(2, 1, "Confrim?");
+;ACB_2.c,401 :: 		Lcd_Out(2, 1, "Confrim?");
 	MOVLW      2
 	MOVWF      FARG_Lcd_Out_row+0
 	MOVLW      1
@@ -1494,18 +1470,18 @@ L_read_level113:
 	MOVLW      ?lstr12_ACB_2+0
 	MOVWF      FARG_Lcd_Out_text+0
 	CALL       _Lcd_Out+0
-;ACB_2.c,408 :: 		msDelay(150);
+;ACB_2.c,402 :: 		msDelay(150);
 	MOVLW      150
 	MOVWF      FARG_msDelay_ms+0
 	CLRF       FARG_msDelay_ms+1
 	CALL       _msDelay+0
-;ACB_2.c,410 :: 		} while (!(PORTD & 0x01));
+;ACB_2.c,404 :: 		} while (!(PORTD & 0x01));
 	BTFSS      PORTD+0, 0
-	GOTO       L_read_level113
-;ACB_2.c,411 :: 		return lvl;
+	GOTO       L_read_level107
+;ACB_2.c,405 :: 		return lvl;
 	MOVF       read_level_lvl_L0+0, 0
 	MOVWF      R0+0
-;ACB_2.c,412 :: 		}
+;ACB_2.c,406 :: 		}
 L_end_read_level:
 	RETURN
 ; end of _read_level
