@@ -1,21 +1,37 @@
-# Automated Chess Board System
+# Automated Chess Board System (ACBS)
 
 ## Introduction
 
-The Automated Chess Board System merges the ancient strategy game of chess with cutting-edge automation technology. This innovative platform allows players to compete against artificial intelligence (AI), practicing their strategies and seeing them executed on an electronic chessboard. It translates players' commands into actual movements, enhancing the traditional chess experience with modern technology.
+The Automated Chess Board System (ACBS) revolutionizes the classic game of chess, allowing players to engage with an AI opponent while witnessing the game unfold on a physical chessboard. This system cleverly combines traditional chess with modern automation technology, translating digital strategies into physical movements on the chessboard.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Theory](#theory)
+- [Design](#design)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
 
 ## Theory
 
-The system employs a sophisticated algorithm that assigns values to chess pieces and positions to calculate the best move. It uses a valuation system (pawns = 1, knights and bishops = 3, rooks = 5, queens = 9, king = 0) and a streamlined Minimax algorithm to evaluate the board's state and make decisions. This process aims to maximize the player's score while minimizing the opponent's, taking into account both material and positional advantages. The level of the chess engine can be adjusted by changing the evaluation depth.
+ACBS is powered by a valuation-based algorithm with a Minimax core, optimizing moves by evaluating piece values and positions. This sophisticated approach enables dynamic difficulty adjustments, making it suitable for various skill levels.
 
 ## Design
 
-The design of the Automated Chess Board System began with a detailed schematic of electronic components and their connections, followed by individual testing of components like NEMA17 stepper motors and DRV8825 drivers. The chessboard combines 3D-printed parts, aluminum profiles, and GT belts for precise movement control. Key features include limit switches for position calibration and an electromagnet for piece manipulation, powered by 12V and controlled via an NMOS transistor. The system's software interprets chess moves from a Python script, executing them through the physical movement of pieces on the board.
+Featuring a blend of 3D-printed components and precision engineering, the ACBS design focuses on accuracy and efficiency. It employs NEMA17 stepper motors, DRV8825 drivers, and an ingenious system of limit switches and electromagnets for piece movement.
 
-## Results and Discussions
+## Installation
 
-The system demonstrated an 80% accuracy in piece movement. Challenges included magnet-to-board alignment and the variable weight of chess pieces. Initially, the design faced limitations due to the large code size, leading to a refined approach that emphasizes serial communication. Suggestions for improvement include using servo motors for precise magnet positioning and stronger magnets to enhance operational efficiency.
+Please refer to the detailed installation instructions provided on our GitHub repository to set up your ACBS.
 
-## Conclusions
+## Usage
 
-The Automated Chess Board System showcases the successful integration of AI with mechanical chess, achieving substantial accuracy in piece movement. Future enhancements can further improve magnet alignment and the system's overall functionality, promising an even more engaging and efficient automated chess experience.
+To start playing against the AI or watch the AI play against itself, follow the step-by-step guide on initializing the system and making moves.
+
+## Contributing
+
+We welcome contributions! If you're interested in improving ACBS.
+
+
+For more detailed information about the Automated Chess Board System, including technical specifications and how to contribute, please contact me.
