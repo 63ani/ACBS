@@ -1,21 +1,21 @@
-1. Introduction
-Chess is an ancient strategy game in which you aim to move pieces strategically to defeat your opponents and finally checkmate them. We want to combine the time-tested chess techniques with automation technology with our Automated Chess Board System. Chess players now have a platform to practice and enjoy the game by competing against artificial intelligence (AI). Players may successfully develop their skills and view their strategies play across the board. It transforms commands into movements on an electronic chessboard.
- 
-2. Theory 
-The system is based on assigning values to pieces and positions to evaluate the best move possible. Each type of piece has a standard value: pawns are worth 1, knights and bishops 3, rooks 5, and queens 9. The king's value is set to 0 since it cannot be captured. The algorithm uses these values to calculate a score for the board at any given state, aiming to maximize the score for one player and minimize it for the other.
-The decision-making process in the code uses a simplified version of the Minimax algorithm, selecting moves that lead to the highest possible score for the player while assuming the opponent will play perfectly to minimize that score.
-Expressed as: Max(P)=Score(P)-Score(O), where P is the player and O is the opponent.
-The algorithm evaluates all potential moves up to a certain depth and chooses the one with the best score after considering both the material and positional advantages. Changing the depth can be regarded as the level of the chess engine. 
+# Automated Chess Board System
 
-3. Design
-The design process for the Automated Chess Board System began with a detailed schematic design. This schematic served as a guide, detailing all electronic components and their connections. Then, each component went individual testing to ensure functionality. The NEMA17 stepper motors, were linked to DRV8825 drivers. These motors function by converting a negative edged step signal into precise 1.8-degree rotational movement.
-The physical structure of the chessboard was then constructed using 3D-printed parts, attached to aluminum profiles and GT belts for the X and Y axes, with careful measurements to determine the correct size of the squares on the board.
-To ensure precise movements on the chessboard, limit switches were attached to define the 'home' position. Following this, an electromagnet was added for piece manipulation. The electromagnet was attached to a custom 3D-printed part and secured with a screw. Due to the 12V requirement for the electromagnet, it was connected through an NMOS transistor. Further tests were made to calibrate the chessboard, ensuring the movements executed by the electromagnet accurately corresponded to the designated chess squares.
-With the physical components in place, the system's code was developed to interpret and execute chess moves received via serial communication from a Python script. The received data contains information on the type of move and the specific board squares involved. The microcontroller's program was refined to respond accurately to the serial commands, translating them into the precise movements of the chess pieces on the board. This ensured that the Automated Chess Board System could react to the player's strategy as communicated through the Python interface, completing the integration of the hardware and software components.
+## Introduction
 
-4. Results and Discussions
-The design and code for the Automated Chess Board System was functional in the movement of the magnet accurately. Nevertheless, the system's piece movement accuracy was approximately 80%. This was due to the magnet-to-board surface alignment and the variance in chess piece weights. The arrangement of the wiring also presented issues, occasionally disrupting piece movement. The initial code also posed a challenge due to its size (above 2K) which caused us to alter the design, were we had to remove the use of a keypad and depend on serial communication. 
-Possible fixes to the stated issues could include the use of a servo motor to control the position of the magnet accurately allowing it to be lowered when not needed. Another fix could be the use of a stronger magnet which allows to increase the distance between the magnet and the surface.
- 
-5. Conclusions
-With an astounding 80% accuracy in piece movement, the Automated Chess Board System demonstrates the effective integration of artificial intelligence with mechanical chess. Further improvement is possible, especially in the area of magnet alignment.
+The Automated Chess Board System merges the ancient strategy game of chess with cutting-edge automation technology. This innovative platform allows players to compete against artificial intelligence (AI), practicing their strategies and seeing them executed on an electronic chessboard. It translates players' commands into actual movements, enhancing the traditional chess experience with modern technology.
+
+## Theory
+
+The system employs a sophisticated algorithm that assigns values to chess pieces and positions to calculate the best move. It uses a valuation system (pawns = 1, knights and bishops = 3, rooks = 5, queens = 9, king = 0) and a streamlined Minimax algorithm to evaluate the board's state and make decisions. This process aims to maximize the player's score while minimizing the opponent's, taking into account both material and positional advantages. The level of the chess engine can be adjusted by changing the evaluation depth.
+
+## Design
+
+The design of the Automated Chess Board System began with a detailed schematic of electronic components and their connections, followed by individual testing of components like NEMA17 stepper motors and DRV8825 drivers. The chessboard combines 3D-printed parts, aluminum profiles, and GT belts for precise movement control. Key features include limit switches for position calibration and an electromagnet for piece manipulation, powered by 12V and controlled via an NMOS transistor. The system's software interprets chess moves from a Python script, executing them through the physical movement of pieces on the board.
+
+## Results and Discussions
+
+The system demonstrated an 80% accuracy in piece movement. Challenges included magnet-to-board alignment and the variable weight of chess pieces. Initially, the design faced limitations due to the large code size, leading to a refined approach that emphasizes serial communication. Suggestions for improvement include using servo motors for precise magnet positioning and stronger magnets to enhance operational efficiency.
+
+## Conclusions
+
+The Automated Chess Board System showcases the successful integration of AI with mechanical chess, achieving substantial accuracy in piece movement. Future enhancements can further improve magnet alignment and the system's overall functionality, promising an even more engaging and efficient automated chess experience.
